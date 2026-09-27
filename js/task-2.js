@@ -1,17 +1,18 @@
 'use strict'
 
-class Storage {
-  constructor(items) {
-    this.items = items;
+class Storage{
+  #items;
+constructor(items){
+  this.#items=items;
+}
+  getItems(){
+    return this.#items;
   }
-  getItems() {
-    return this.items;
-  }
-  addItem(item) {
-    this.items.push(item);
+  addItem(newItem){
+    this.#items.push(newItem);
   }
   removeItem(itemToRemove) {
-    this.items = this.items.filter(item => item != itemToRemove);
+    this.#items = this.#items.filter(el => el !== itemToRemove);
   }
 }
 
